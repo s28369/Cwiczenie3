@@ -20,7 +20,7 @@ public abstract class Kontener
         SelfWeight = selfWeight;
     }
 
-    public abstract void Oproznenie();
+    public abstract void Oproznenie(double weight);
 
 
     public abstract void Zaladowac(double weight);

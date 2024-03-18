@@ -35,9 +35,12 @@ public class KontenerPlyn : Kontener, IHazardNotifier
         }
     }
     
-    public override void Oproznenie()
+    public override void Oproznenie(double weight)
     {
-        Weight = 0;
+        if (Weight - weight >=0)
+            Weight -= weight;
+        else
+            Console.WriteLine("Error: weight < 0");
     }
 
 
