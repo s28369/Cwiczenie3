@@ -21,7 +21,7 @@ public abstract class Kontener
     }
 
     public abstract void Oproznenie(double weight);
-    public abstract void Zaladowac(double weight, double temperature, string rodzajproduktu);
+    public abstract void Zaladowac(double weight, string rodzajproduktu);
 
 
     public abstract void Zaladowac(double weight);

@@ -6,13 +6,16 @@ public class KontenerPlyn : Kontener, IHazardNotifier
     public KontenerPlyn(double masaMax, double height, double glenbokosc, double selfWeight, string typLadunku) : base(masaMax, height, glenbokosc, selfWeight)
     {
         TypLadunku = typLadunku;
-        NumerSeryjny = "KON-" + "C-" + num;
+        NumerSeryjny = "KON-" + "P-" + num;
         num++;
     }
 
+    
 
-    public override void Zaladowac(double weight, double temperature, string rodzajproduktu)
-    { throw new NotImplementedException(); }
+    public override void Zaladowac(double weight, string rodzajproduktu)
+    {
+        throw new NotImplementedException();
+    }
 
     public override void Zaladowac(double weight)
     {

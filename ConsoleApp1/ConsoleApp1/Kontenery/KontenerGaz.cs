@@ -7,6 +7,8 @@ public class KontenerGaz : Kontener, IHazardNotifier
     public KontenerGaz(double masaMax, double height, double glenbokosc, double selfWeight , double pressure) : base(masaMax, height, glenbokosc, selfWeight)
     {
         Pressure = pressure;
+        NumerSeryjny = "KON-" + "G-" + num;
+        num++;
     }
 
     public override void Oproznenie(double weight)
@@ -17,8 +19,11 @@ public class KontenerGaz : Kontener, IHazardNotifier
 
     }
 
-    public override void Zaladowac(double weight, double temperature, string rodzajproduktu)
-    {throw new NotImplementedException(); }
+    public override void Zaladowac(double weight, string rodzajproduktu)
+    {
+        throw new NotImplementedException();
+    }
+
 
     public override void Zaladowac(double weight)
     {
@@ -33,7 +38,7 @@ public class KontenerGaz : Kontener, IHazardNotifier
         }
         catch (OverfillException e)
         {
-            Console.WriteLine(e);
+            Console.WriteLine(e + " in " + NumerSeryjny);
         }
     }
 
