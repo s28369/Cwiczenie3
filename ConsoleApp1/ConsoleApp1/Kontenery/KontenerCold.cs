@@ -1,3 +1,5 @@
+using System.Security.AccessControl;
+
 namespace ConsoleApp1.Kontenery;
 
 public class KontenerCold : Kontener
@@ -6,7 +8,6 @@ public class KontenerCold : Kontener
     protected double Temperature { get; set; }
     public KontenerCold(double masaMax, double height, double glenbokosc, double selfWeight, string rodzajProduktu, double temperature) : base(masaMax, height, glenbokosc, selfWeight)
     {
-        RodzajProduktu = rodzajProduktu;
         Temperature = temperature;
     }
 
@@ -19,14 +20,30 @@ public class KontenerCold : Kontener
     }
 
     public override void Zaladowac(double weight)
+    { throw new NotImplementedException(); }
+
+    public override void Zaladowac(double weight, double temperature, string rodzajproduktu)
     {
-        if (Weight + weight < MasaMax)
+        if (temperature >= Temperature && (RodzajProduktu.Equals(rodzajproduktu) || RodzajProduktu.Equals("")) )
         {
-            Weight += weight;
+            if (Weight + weight < MasaMax)
+            {
+                Weight += weight;
+                RodzajProduktu = rodzajproduktu;
+            }
+            else
+            {
+                Console.Write("Too Heavy");
+            }
+        }
+        else if (temperature < Temperature)
+        {
+            Console.WriteLine("Invalid temperature");
         }
         else
         {
-            Console.Write("Too Heavy");
+            Console.WriteLine("Nieprawidłowy produkt");   
         }
+
     }
 }

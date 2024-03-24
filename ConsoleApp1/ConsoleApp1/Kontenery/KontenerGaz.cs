@@ -17,6 +17,9 @@ public class KontenerGaz : Kontener, IHazardNotifier
 
     }
 
+    public override void Zaladowac(double weight, double temperature, string rodzajproduktu)
+    {throw new NotImplementedException(); }
+
     public override void Zaladowac(double weight)
     {
         double WeightNow = Weight;

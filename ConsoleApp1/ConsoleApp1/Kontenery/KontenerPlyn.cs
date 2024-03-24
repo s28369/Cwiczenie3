@@ -9,8 +9,11 @@ public class KontenerPlyn : Kontener, IHazardNotifier
         NumerSeryjny = "KON-" + "C-" + num;
         num++;
     }
-    
-    
+
+
+    public override void Zaladowac(double weight, double temperature, string rodzajproduktu)
+    { throw new NotImplementedException(); }
+
     public override void Zaladowac(double weight)
     {
         double WeightNow = Weight;
