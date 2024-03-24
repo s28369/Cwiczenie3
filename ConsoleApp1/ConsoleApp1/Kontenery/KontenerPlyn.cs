@@ -40,7 +40,12 @@ public class KontenerPlyn : Kontener, IHazardNotifier
             Console.WriteLine(e);
         }
     }
-    
+
+    public override void ShowInfo()
+    {
+        Console.WriteLine(NumerSeryjny + " " + TypLadunku + " " + Weight);
+    }
+
     public override void Oproznenie(double weight)
     {
         if (Weight - weight >=0)

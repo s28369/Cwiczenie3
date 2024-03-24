@@ -26,6 +26,11 @@ public class KontenerCold : Kontener
     public override void Zaladowac(double weight)
     { throw new NotImplementedException(); }
 
+    public override void ShowInfo()
+    {
+        Console.WriteLine(NumerSeryjny + " " + RodzajProduktu + " " + Temperature + " " + Weight);
+    }
+
     public override void Zaladowac(double weight, string rodzajproduktu)
     {
         double temperature = ProduktyCold[rodzajproduktu];

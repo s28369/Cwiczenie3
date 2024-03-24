@@ -2,15 +2,49 @@
 
 public abstract class Kontener
 {
-    protected double MasaMax { get; }
-    protected double Weight { get; set; } = 0;
+    protected double masaMax;
+    public double MasaMax
+    {
+        get
+        {
+            return masaMax;
+        }
+        set { masaMax = value; }
+    }
+
+    protected double weight;
+    public double Weight    
+    {
+        get
+        {
+            return weight;
+        }
+        set { weight = value; }
+    }
+
     protected static int num { get; set; } = 0;
-    protected double Height { get; set; }
+    protected double height;
+    public double Height
+    {
+        get
+        {
+            return height;
+        }
+        set { height = value; }
+    }
 
     protected double Glenbokosc { get; set; }
 
-    public String NumerSeryjny { get; set; }
-    protected double SelfWeight { get; set; }
+    public string NumerSeryjny { get; set; }
+    protected double selfWeight;
+    public double SelfWeight
+    {
+        get
+        {
+            return selfWeight;
+        }
+        set { selfWeight = value; }
+    }
     
     protected Kontener(double masaMax, double height, double glenbokosc, double selfWeight)
     {
@@ -25,6 +59,7 @@ public abstract class Kontener
 
 
     public abstract void Zaladowac(double weight);
+    public abstract void ShowInfo();
 
 
 }

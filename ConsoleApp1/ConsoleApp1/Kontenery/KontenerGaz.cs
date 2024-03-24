@@ -42,6 +42,11 @@ public class KontenerGaz : Kontener, IHazardNotifier
         }
     }
 
+    public override void ShowInfo()
+    {
+        Console.WriteLine(NumerSeryjny + " " + Pressure + " " + Weight);
+    }
+
     public void HazardAlert(string cont)
     {
         Console.WriteLine("WARNING IN " + cont);
